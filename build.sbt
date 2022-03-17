@@ -8,7 +8,7 @@ version := "0.42.0"
 organization := "ai.x"
 name := projectName
 scalaVersion := "2.12.10"
-crossScalaVersions := Seq("2.12.10", "2.13.1")
+crossScalaVersions := Seq("2.11.12", "2.12.10", "2.13.1")
 useGpg := true
 credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credential")
 description := "Additional type classes for the play-json serialization library"
@@ -31,7 +31,9 @@ developers := List(
 )
 
 libraryDependencies ++=   Seq(
-  "com.typesafe.play" %% "play-json" % "2.8.1",
+  // "com.typesafe.play" %% "play-json" % "2.8.1",
+  // Scala 2.11 Back compile
+  "com.typesafe.play" %% "play-json" % "2.8.211",
   "org.scala-lang" % "scala-compiler" % scalaVersion.value % "provided",
   "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 )
